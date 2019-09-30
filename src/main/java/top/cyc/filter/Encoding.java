@@ -9,10 +9,10 @@ public class Encoding implements Filter {
     public void destroy() {
     }
 
-    public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws ServletException, IOException {
-        req.setCharacterEncoding("utf-8");
-        resp.setCharacterEncoding("utf-8");
-        chain.doFilter(req, resp);
+    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws ServletException, IOException {
+        request.setCharacterEncoding("utf-8");
+        response.setCharacterEncoding("utf-8");
+        chain.doFilter(request, response);
     }
 
     public void init(FilterConfig config) throws ServletException {

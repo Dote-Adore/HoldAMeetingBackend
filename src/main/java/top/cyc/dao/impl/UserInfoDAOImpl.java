@@ -9,11 +9,13 @@ import java.sql.SQLException;
 public class UserInfoDAOImpl extends DAOUtlis implements UserInfoDAO {
     @Override
     public void Register(UserInfo userInfo) throws SQLException {
+        sql = "insert into userInfo(userName, password, name, department) values(?,?,?,?)";
+        DB.update(sql,userInfo.getUserName(),userInfo.getPassword(), userInfo.getName(),userInfo.getDepartment());
     }
 
     @Override
     public UserInfo Login(String userName, String password, String openId) throws SQLException {
-        String sql = "select * from userInfo where userName=? and `password`=?";
+        sql = "select * from userInfo where userName=? and `password`=?";
         UserInfo userInfo = DB.get(UserInfo.class,sql,userName,password);
         // 如果userinfo不为空，则登陆,openid 更新
         if(userInfo!=null) {

@@ -36,6 +36,7 @@ public class login extends HttpServlet {
                 json.put("id", userInfo.getId());
                 json.put("username",userInfo.getUserName());
                 json.put("permission", userInfo.getPermission());
+                json.put("name",userInfo.getName());
                 out.print(new UtilJSON(json));
             }
             // 如找不到结果

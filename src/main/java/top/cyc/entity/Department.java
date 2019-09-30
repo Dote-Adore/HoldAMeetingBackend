@@ -1,5 +1,7 @@
 package top.cyc.entity;
 
+import com.alibaba.fastjson.JSONObject;
+
 public class Department {
     private  Integer id;
     private String name;
@@ -26,5 +28,13 @@ public class Department {
 
     public void setStaffNum(Integer staffNum) {
         this.staffNum = staffNum;
+    }
+
+    public JSONObject ToJSON(){
+        JSONObject json = new JSONObject();
+        json.put("id",id);
+        json.put("name",name);
+        json.put("staffNum",staffNum);
+        return  json;
     }
 }
