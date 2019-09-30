@@ -22,7 +22,6 @@ public class login extends HttpServlet {
         String userName = request.getParameter("userName");
         String password = request.getParameter("password");
         String code = request.getParameter("code");
-        System.out.println(userName+"   "+password+"   "+code);
         ToWxApi wxapi = new ToWxApi();
         UserInfoDAOImpl UIDI = new UserInfoDAOImpl();
         StringBuilder reslut = wxapi.GetOpenId(code);
@@ -38,6 +37,7 @@ public class login extends HttpServlet {
                 json.put("permission", userInfo.getPermission());
                 json.put("name",userInfo.getName());
                 out.print(new UtilJSON(json));
+                System.out.println(userName+"   "+password+"   "+userInfo.getName());
             }
             // 如找不到结果
             else{
@@ -46,7 +46,6 @@ public class login extends HttpServlet {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        System.out.println(openid.toString());
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

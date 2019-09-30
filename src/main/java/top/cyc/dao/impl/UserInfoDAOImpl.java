@@ -9,8 +9,8 @@ import java.sql.SQLException;
 public class UserInfoDAOImpl extends DAOUtlis implements UserInfoDAO {
     @Override
     public void Register(UserInfo userInfo) throws SQLException {
-        sql = "insert into userInfo(userName, password, name, department) values(?,?,?,?)";
-        DB.update(sql,userInfo.getUserName(),userInfo.getPassword(), userInfo.getName(),userInfo.getDepartment());
+        sql = "insert into userInfo(userName, password, name) values(?,?,?)";
+        DB.update(sql,userInfo.getUserName(),userInfo.getPassword(), userInfo.getName());
     }
 
     @Override

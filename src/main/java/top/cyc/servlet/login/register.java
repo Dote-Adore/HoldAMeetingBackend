@@ -18,11 +18,9 @@ public class register extends HttpServlet {
         String userName = request.getParameter("username");
         String password = request.getParameter("password");
         String name = request.getParameter("name");
-        Integer departmentId = Integer.parseInt(request.getParameter("departmentID"));
         UserInfo userInfo = new UserInfo();
         userInfo.setUserName(userName);
         userInfo.setPassword(password);
-        userInfo.setDepartment(departmentId);
         userInfo.setName(name);
         UserInfoDAOImpl UIDI = new UserInfoDAOImpl();
         try {

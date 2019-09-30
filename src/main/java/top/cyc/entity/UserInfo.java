@@ -8,7 +8,6 @@ public class UserInfo {
     private int permission;
     private  boolean autoLogin;
     private String name;
-    private Integer department;
 
     public Integer getId() {
         return id;
@@ -65,13 +64,5 @@ public class UserInfo {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Integer getDepartment() {
-        return department;
-    }
-
-    public void setDepartment(Integer department) {
-        this.department = department;
     }
 }
