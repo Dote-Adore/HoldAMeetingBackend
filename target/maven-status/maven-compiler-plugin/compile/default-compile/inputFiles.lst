@@ -1,0 +1,13 @@
+D:\java-workspace\MidTermWork\src\main\java\top\cyc\dao\UserInfoDAO.java
+D:\java-workspace\MidTermWork\src\main\java\top\cyc\entity\UserInfo.java
+D:\java-workspace\MidTermWork\src\main\java\top\cyc\servlet\login\ToWxApi.java
+D:\java-workspace\MidTermWork\src\main\java\top\cyc\utils\DButils.java
+D:\java-workspace\MidTermWork\src\main\java\top\cyc\filter\Encoding.java
+D:\java-workspace\MidTermWork\src\main\java\top\cyc\dao\DAOUtlis.java
+D:\java-workspace\MidTermWork\src\main\java\top\cyc\servlet\login\login.java
+D:\java-workspace\MidTermWork\src\main\java\top\cyc\servlet\qrCode\GetQRCode.java
+D:\java-workspace\MidTermWork\src\main\java\top\cyc\utils\ReflectionUtils.java
+D:\java-workspace\MidTermWork\src\main\java\top\cyc\dao\impl\UserInfoDAOImpl.java
+D:\java-workspace\MidTermWork\src\main\java\top\cyc\servlet\login\GetOpenId.java
+D:\java-workspace\MidTermWork\src\main\java\top\cyc\utils\WX_API.java
+D:\java-workspace\MidTermWork\src\main\java\top\cyc\utils\UtilJSON.java
