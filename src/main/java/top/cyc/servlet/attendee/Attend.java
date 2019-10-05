@@ -1,6 +1,5 @@
 package top.cyc.servlet.attendee;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
 import top.cyc.dao.impl.AttendeeDAOImpl;
 import top.cyc.entity.Attendee;
 import top.cyc.utils.UtilJSON;

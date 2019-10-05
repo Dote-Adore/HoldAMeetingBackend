@@ -1,7 +1,5 @@
 package top.cyc.servlet.login;
 
-import com.alibaba.fastjson.JSONObject;
-import com.sun.org.apache.xpath.internal.operations.Bool;
 import top.cyc.dao.impl.UserInfoDAOImpl;
 import top.cyc.entity.UserInfo;
 import top.cyc.utils.UtilJSON;
