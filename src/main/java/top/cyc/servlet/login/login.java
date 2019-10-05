@@ -1,6 +1,7 @@
 package top.cyc.servlet.login;
 
 import com.alibaba.fastjson.JSONObject;
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import top.cyc.dao.impl.UserInfoDAOImpl;
 import top.cyc.entity.UserInfo;
 import top.cyc.utils.UtilJSON;
@@ -22,21 +23,14 @@ public class login extends HttpServlet {
         String userName = request.getParameter("userName");
         String password = request.getParameter("password");
         String code = request.getParameter("code");
-        ToWxApi wxapi = new ToWxApi();
+        Boolean autoLogin = Boolean.parseBoolean(request.getParameter("autoLogin"));
         UserInfoDAOImpl UIDI = new UserInfoDAOImpl();
-        StringBuilder reslut = wxapi.GetOpenId(code);
-        JSONObject jsonObject = JSONObject.parseObject(reslut.toString());
-        String openid = jsonObject.getString("openid");
+        String openid = ToWxApi.GetOpenId(code);
         try {
-            UserInfo userInfo = UIDI.Login(userName,password,openid);
+            UserInfo userInfo = UIDI.Login(userName,password,openid,autoLogin);
             // 如果有结果
             if(userInfo!=null){
-                JSONObject json = new JSONObject();
-                json.put("id", userInfo.getId());
-                json.put("username",userInfo.getUserName());
-                json.put("permission", userInfo.getPermission());
-                json.put("name",userInfo.getName());
-                out.print(new UtilJSON(json));
+                out.print(new UtilJSON(userInfo.toJSON()));
                 System.out.println(userName+"   "+password+"   "+userInfo.getName());
             }
             // 如找不到结果

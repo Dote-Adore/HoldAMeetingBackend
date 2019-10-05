@@ -21,7 +21,7 @@ public class DButils {
             url = "jdbc:mysql://106.15.36.71:3306/NCU_meeting";
         }
         else {
-            url = "jdbc:mysql://localhost:3306/NCUTradingPlatform";
+            url = "jdbc:mysql://localhost:3306/NCUTradingPlatform?serverTimezone\\=Hongkong";
         }
 
         Properties info = new Properties();

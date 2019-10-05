@@ -1,11 +1,14 @@
 package top.cyc.entity;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
+
 public class UserInfo {
     private Integer id;
     private  String userName;
     private String password;
+    private Integer permission;
     private  String openID;
-    private int permission;
     private  boolean autoLogin;
     private String name;
 
@@ -33,20 +36,20 @@ public class UserInfo {
         this.password = password;
     }
 
+    public Integer getPermission() {
+        return permission;
+    }
+
+    public void setPermission(Integer permission) {
+        this.permission = permission;
+    }
+
     public String getOpenID() {
         return openID;
     }
 
     public void setOpenID(String openID) {
         this.openID = openID;
-    }
-
-    public int getPermission() {
-        return permission;
-    }
-
-    public void setPermission(int permission) {
-        this.permission = permission;
     }
 
     public boolean isAutoLogin() {
@@ -64,5 +67,14 @@ public class UserInfo {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public JSONObject toJSON(){
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("id",id);
+        jsonObject.put("userName",userName);
+        jsonObject.put("permission",permission);
+        jsonObject.put("name",name);
+        return jsonObject;
     }
 }

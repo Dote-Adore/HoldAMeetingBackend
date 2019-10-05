@@ -2,6 +2,7 @@ package top.cyc.servlet.login;
 
 import top.cyc.dao.impl.UserInfoDAOImpl;
 import top.cyc.entity.UserInfo;
+import top.cyc.utils.UtilJSON;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -24,12 +25,18 @@ public class register extends HttpServlet {
         userInfo.setName(name);
         UserInfoDAOImpl UIDI = new UserInfoDAOImpl();
         try {
-            UIDI.Register(userInfo);
-            out.print(true);
+            // 如果该用户没有被注册
+            if(!UIDI.hasUserName(userName)) {
+                UIDI.Register(userInfo);
+                out.print(new UtilJSON(true,""));
+            }
+            else{
+                out.print(new UtilJSON(false, "该用户名已被注册"));
+            }
         }catch (Exception e)
         {
             e.printStackTrace();
-            out.print(false);
+            out.print(new UtilJSON(false, "注册失败，请重试"));
         }
     }
 }
